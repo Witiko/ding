@@ -122,6 +122,19 @@ var tests = {
       } else {
         failure();
       }
+    }, "Function ding~new$Array (array copy)": function(success, failure) {
+      /* We make a copy of an array and check that it is identical */
+      var array = [ "1", 2, ,[], 3 ],
+          copy = new$Array(array);
+      if( array[0] == copy[0] &&
+          array[1] == copy[1] &&
+          array[2] == copy[2] &&
+          array[3] == copy[3] &&
+          array[4] == copy[4] ) {
+        success();
+      } else {
+        failure();
+      }
     }, "Function ding~new$Array (converting iterable into array)": function(success, failure) {
       /* We make a copy of an array and check that it is identical */
       var array = [ "1", 2, ,[], 3 ],
