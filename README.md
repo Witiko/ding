@@ -1,7 +1,5 @@
 # Ding #
 
-## Introduction ##
-
 The ding library enables simple dispatchment of [storage events][].
 
   [Storage Events]: http://www.w3.org/TR/webstorage/#the-storage-event "Web Storage"
@@ -26,8 +24,18 @@ The `value` attribute may contain a reference to a string representing the value
 
 The `ding.send` method supports the following overloads:
 
-  1. `ding.send([ name1, name2, ..., nameN ])` is equal to calling `ding.send( name1 ); ding.send( name2 ); ... ding.send( nameN );`
-  2. `ding.send({ name1: value1, ..., nameN: valueN })` is equal to calling `ding.send( name1, value1 ); ... ding.send( nameN, valueN );`
+  1. `ding.send([ name1, name2, ..., nameN ])` is equal to calling:
+
+        ding.send( name1 );
+        ding.send( name2 );
+        ...
+        ding.send( nameN );
+  
+  2. `ding.send({ name1: value1, ..., nameN: valueN })` is equal to calling:
+  
+        ding.send( name1, value1 );
+        ...
+        ding.send( nameN, valueN );`
 
 ### Method `ding.listen` ###
 
