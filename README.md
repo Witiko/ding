@@ -22,6 +22,8 @@ The `name` attribute contains a reference to a string representing the name of t
 
 The `value` attribute may contain a reference to a string representing the value dispatched with the event. If the `value` attribute is undefined, a pseudo-random hash obtained by executing `Math.random().toString(36).replace(/0\./, "")` is used instead.
 
+#### Overloads ####
+
 The `ding.send` method supports the following overloads:
 
   1. `ding.send([ name1, name2, ..., nameN ])` is equal to calling:
