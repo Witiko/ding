@@ -51,7 +51,7 @@ Once called, the `ding.listen` method will add listeners for the specified incom
       "nameN": callbackN
     });
 
-For every X from 1 through N, the `callbackX` method will be called, when a storage event with the `nameX` name is received. All names should be fully qualified domain names to prevent collisions. The method returns an unsubscription function, which will remove the listeners once invoked.
+For every X from 1 through N, the `callbackX` method will be called, when a storage event with the `nameX` name is received. All names should be fully qualified domain names to prevent collisions. The method returns an unsubscription function, which will, once invoked, remove the listeners.
 
 ## Compatibility ##
 
