@@ -31,9 +31,10 @@ The `ding.send` method supports the following overloads:
         ...
         ding.send( nameN );
   
-  2. `ding.send({ name1: value1, ..., nameN: valueN })` is equal to calling:
+  2. `ding.send({ name1: value1, name2: value2, ..., nameN: valueN })` is equal to calling:
   
         ding.send( name1, value1 );
+        ding.send( name2, value2 );
         ...
         ding.send( nameN, valueN );`
 
