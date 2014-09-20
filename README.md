@@ -55,7 +55,7 @@ For every X from 1 through N, the `callbackX` method will be called, when a stor
 
 ## Compatibility ##
 
-Ding is compatible with any browser, which supports [ECMAScript 3+][ECMA-262 3rd edition] including the extensions described in the [WHATWG JavaScript specification][ECMAScript web extensions] and the Web Storage interface as described in [Web Storage W3C Recommendation][]. According to the [Mozzila development network][DOM Storage guide], the list includes:
+Ding is compatible with any browser, which supports [ECMAScript 3+][ECMA-262 3rd edition] including the extensions described in the [WHATWG JavaScript specification][ECMAScript web extensions] and the Web Storage interface as described in the [Web Storage W3C Recommendation][]. According to the [Mozzila development network][DOM Storage guide], the list includes:
   
  * Opera 10.50+
  * Mozilla/Firefox 3.5+
