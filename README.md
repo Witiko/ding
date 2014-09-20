@@ -55,17 +55,18 @@ For every X from 1 through N, the `callbackX` method will be called, when a stor
 
 ## Compatibility ##
 
-Ding is compatible with any browser, which supports [ECMAScript 3+][ECMA-262 3rd edition] including the extensions described in the [WHATWG JavaScript specification][ECMAScript web extensions] and the Web Storage interface as described in the [Web Storage W3C Recommendation][]. According to the [Mozzila development network][DOM Storage guide], the list includes:
-  
+Ding is compatible with any browser, which supports [ECMAScript 3+][ECMA-262 3rd edition] including the extensions described in the [WHATWG JavaScript specification][ECMAScript web extensions], the Web Storage interface as described in the [Web Storage W3C Recommendation][] and DOM 2 Events as described in the [DOM 2 Events W3C recommendation][DOM 2 Events]. The list includes:
+
  * Opera 10.50+
  * Mozilla/Firefox 3.5+
- * Internet Explorer 8+
+ * Internet Explorer 9+
  * Safari 4+
  * Chrome 4+
 
 [ECMA-262 3rd edition]: http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf "ECMAScript Language Specification"
 [ECMAScript web extensions]: http://javascript.spec.whatwg.org/ "JavaScript, aka. Web ECMAScript"
 [Web Storage W3C Recommendation]: http://www.w3.org/TR/webstorage/ "Web Storage"
+[DOM 2 Events]: http://www.w3.org/TR/DOM-Level-2-Events/ "DOM 2 Events Specification"
 [DOM Storage guide]: https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage#Browser_compatibility "DOM Storage guide - Web developer guide | MDN"
 
 ## Compilation ##
@@ -94,6 +95,10 @@ By loading the `src/test.html` file in your browser, you can run a suite of test
 
   * Ding is compatible with a given browser.
   * Your modified version of jBus works as intended.
+
+Since the test suite accesses frames and [`localStorage`][localStorage], both of which are known not to work under the `file://` pseudo-protocol, you may want to try [the online version](https://dl.dropboxusercontent.com/u/48267088/Ding/test.html) instead.
+
+[localStorage]: http://www.w3.org/TR/webstorage/#the-localstorage-attribute "Web Storage"
 
 ## License (MIT) ##
 
