@@ -80,7 +80,7 @@ The minification of the ding source files requires the `closure-compiler` binary
 
 The latest minified build of ding is also available online:
 
-  * [`ding.min.js`](http://tiny.cc/ding)
+  * [`ding.min.js`](http://tiny.cc/dingjs)
 
 Alternatively, you can use any other minification tool or service, as long as the license notice is kept intact.
   
