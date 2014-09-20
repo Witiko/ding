@@ -96,7 +96,7 @@ By loading the `src/test.html` file in your browser, you can run a suite of test
   * Ding is compatible with a given browser.
   * Your modified version of jBus works as intended.
 
-Since the test suite accesses frames and [`localStorage`][localStorage], both of which are known not to work under the `file://` pseudo-protocol on several browsers, you may want to try [the online version](https://dl.dropboxusercontent.com/u/48267088/Ding/test.html) instead.
+Since the test suite accesses frames and [`localStorage`][localStorage], both of which are known not to work under the `file://` pseudo-protocol in several browsers, you may want to try [the online version](https://dl.dropboxusercontent.com/u/48267088/Ding/test.html) instead.
 
 [localStorage]: http://www.w3.org/TR/webstorage/#the-localstorage-attribute "Web Storage"
 
