@@ -1,7 +1,16 @@
 // A test suite for ding
 var tests = {
   "Unit tests": {
-    "ding.send (w/ value)": function(success, failure) {
+    "ding.send (w/o name)": function(success, failure) {
+      /**
+       * We create a new listener in the target iframe,
+       * we send a ding and we wait for it to be received intact.
+       */
+      var unsubscribe = target.listen(function() {
+        success();
+        unsubscribe();
+      }); ding.send( );
+    }, "ding.send (w/ value)": function(success, failure) {
       /**
        * We create a new listener in the target iframe,
        * we send a ding and we wait for it to be received intact.
@@ -71,6 +80,7 @@ var tests = {
       }); var unsubscribe = target.listen( listeners );
       ding.send( names );
     }, "ding.listen": new RelativePath( "ding.send (w/ value)" ),
+    "ding.listen (overload #1)": new RelativePath( "ding.send (w/o name)" ),
     "ding.listen (listener unsubscription)": function(success, failure) {
       /**
        * We create a new listener in the target iframe,
