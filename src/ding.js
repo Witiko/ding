@@ -2,7 +2,8 @@ var ding = (function() {
 
   // # Constants #
   var PREFIX = "name.witiko.ding::",
-      LOGGER = "[ding]", WARNING = "Warning:";
+      LOGGER = "[ding]", WARNING = "Warning:",
+      DEFAULT = "name.witiko.ding.names.default";
   
   // # Utility function #
   
@@ -19,25 +20,37 @@ var ding = (function() {
     send:
       // @annotate Method `ding.send`
       function(name, value) {
-        if( isArray(name) ) {
+        if( arguments.length === 0 ) {
+          ding.send( DEFAULT );
+        } else if( isArray(name) ) {
           $Array.forEach( name, ding.send );
-        } else if(typeof name === "object") {
-          for(var i in name) {
-            ding.send( i, name[i] );
-          }
-        } else {
+        } else if( isString(name) ) {
           if(!isQualified( name )) {
             warn( "An event", name, "without a fully qualified domain " + 
               "name has been dispatched." );
           } var key = prefix.add( name );
           localStorage.setItem( key, isString( value ) ? value : $String.random() );
           localStorage.removeItem( key );
+        } else if(typeof name === "object") {
+          for(var i in name) {
+            ding.send( i, name[i] );
+          }
+        } else {
+          console.log( arguments.length );
+          throw new TypeError( "Unexpected arguments have been passed to "
+            + "the ding.send method: [ " + new$Array( arguments ).join(", ") + " ]" );
         }
       },
     
     listen:
       // @annotate Method `ding.listen`
       function(listeners) {
+        if( isFunction(listeners) ) {
+          var obj = {};
+          obj[ DEFAULT ] = listeners;
+          return ding.listen( obj );
+        }
+      
         addEventListener( "storage", callback, false );
         for( var key in listeners ) {
           if(!isQualified( key )) {
