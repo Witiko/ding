@@ -16,7 +16,7 @@ The method has no return value.
 
 #### Attribute `name` ####
 
-The `name` attribute contains a reference to a string representing the name of the dispatched storage event. The name should be a fully qualified domain name to prevent collisions.
+The `name` attribute may contain a reference to a string representing the name of the dispatched storage event. The name should be a fully qualified domain name to prevent collisions. If the `name` attribute is undefined, the default name `name.witiko.ding.names.default` is used instead.
 
 #### Attribute `value` ####
 
@@ -38,7 +38,7 @@ The `ding.send` method supports the following overloads:
         ding.send( name1, value1 );
         ding.send( name2, value2 );
         ...
-        ding.send( nameN, valueN );`
+        ding.send( nameN, valueN );
 
 ### Method `ding.listen` ###
 
@@ -52,6 +52,12 @@ Once called, the `ding.listen` method will add listeners for the specified incom
     });
 
 For every X from 1 through N, the `callbackX` method will be called, when a storage event with the `nameX` name is received. All names should be fully qualified domain names to prevent collisions. The method returns an unsubscription function, which will, once invoked, remove the listeners.
+
+#### Overloads ####
+
+The `ding.listen` method supports the following overloads:
+
+  1. `ding.listen( callback )` is equal to calling `ding.listen({ "name.witiko.ding.names.default": callback });`
 
 ## Compatibility ##
 
