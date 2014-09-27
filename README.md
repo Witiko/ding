@@ -44,7 +44,7 @@ The `ding.send` method supports the following overloads:
 
 Once called, the `ding.listen` method will add listeners for the specified names of incoming [storage events][] in the current window. The method is invoked as follows:
 
-    ding.send({
+    ding.listen({
       "name1": callback1,
       "name2": callback2,
       ...
