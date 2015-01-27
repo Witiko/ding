@@ -62,7 +62,7 @@ var ding = (function() {
         };
         
         function callback(evt) {
-          if(!evt.newValue) return;
+          if(!evt.newValue || !prefix.has(evt.key)) return;
           var key = prefix.remove( evt.key );
           if( key in listeners ) {
             async(function() {
@@ -71,27 +71,37 @@ var ding = (function() {
           }
         }
       }
-  }, prefix = {
-    add:
-      /**
-       * Prefixes the given name with the ding prefix.
-       * @param name - The given name.
-       * @return the prefixed name.
-       */
-      function(name) {
-        return PREFIX + name;
-      },
-    
-    remove:
-      /**
-       * Removes the ding prefix from the given name.
-       * @param name - The given name.
-       * @return the name without the ding prefix.
-       */
-      function(name) {
-        return name.substr( PREFIX.length );
-      }
-  };
+    }, prefix = {
+      add:
+        /**
+         * Prefixes the given name with the ding prefix.
+         * @param name - The given name.
+         * @return the prefixed name.
+         */
+        function(name) {
+          return PREFIX + name;
+        },
+
+      has:
+        /**
+         * Tests whether the given name starts with the ding prefix.
+         * @param name - The given name.
+         * @return whether the given name starts with the ding prefix.
+         */
+        function(name) {
+          return name.indexOf(PREFIX) == 0;
+        },
+      
+      remove:
+        /**
+         * Removes the ding prefix from the given name.
+         * @param name - The given name.
+         * @return the name without the ding prefix.
+         */
+        function(name) {
+          return name.substr( PREFIX.length );
+        }
+    };
   
   // # Utility function #
   
